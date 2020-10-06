@@ -3,7 +3,8 @@
 <h3>Newsfeed:</h3>
 
 <% @posts.each do |post| %>
-  <div class="posts">
+<%# remember to remove orange class and assign it as a variable %>
+  <div class="posts orange">
         <div class="posts_username">
             <%= post.user.username %> 
         </div>

@@ -14,7 +14,7 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightblue;
+    background-color: #99ccff;
     color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
@@ -28,7 +28,7 @@
     margin: 16px auto;
     max-width: 960px;
     padding: 2.25%; /* 18px / 800px */
-    width: 85%;
+    width: 90%;
   }
 
   h1 {
@@ -137,5 +137,5 @@ li a {
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-  background-color: #111;
+  background-color: orange;
 }

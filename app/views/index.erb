@@ -1,0 +1,18 @@
+<head><link rel="stylesheet" href="/stylesheets/index.css" /></head>
+<h1>Welcome to FitJournal</h1>
+
+<h3>Newsfeed:</h3>
+
+<% @posts.each do |post| %>
+  <div class="posts">
+        <div class="posts_username">
+            <%= post.user.username %> 
+        </div>
+        <div class="posts_date">
+             <%= post.updated_at.strftime('%b %d, %Y') || post.created_at.strftime('%b %d, %Y') %>
+        </div><br> 
+        <div class="posts_content"> 
+            <%= post.content %>
+        </div>
+    </div>
+<% end %>

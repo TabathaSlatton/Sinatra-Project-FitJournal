@@ -1,6 +1,19 @@
-<h1>Welcome to FitJournal</h1>
+<h1>Welcome to FitJournal, <%= @user.first_name %>!</h1>
 
 <h3>Newsfeed:</h3>
+<div id="new_post">
+<form method="post" action="/posts">
+<input type="text" name="content">
+<label for="themes">Please Choose a top that your post covers:</label>
+<input list="themes">
+  <datalist id="themes">
+    <option value="Food/Healthy Eating">
+    <option value="Fitness">
+    <option value="Social/Other">
+  </datalist>
+<input type="submit" id="submit">
+</form>
+</div>
 
 <% @posts.each do |post| %>
 <%# remember to remove orange class and assign it as a variable %>

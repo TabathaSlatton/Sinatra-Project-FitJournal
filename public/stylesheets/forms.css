@@ -45,6 +45,12 @@ input#password {
   background-size: 6%;
 }
 
+label {
+  /* font-family: "Roboto", sans-serif; */
+  font-family: "Sansita Swashed", cursive;
+  margin-left: 240px;
+  font-size: 10pt;
+}
 /* div#login_form {
   /* width: 100%; */
 /* display: flex; */

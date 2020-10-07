@@ -1,0 +1,13 @@
+ <form method="post" action="/posts/<%= post.id %>" class="form-container">
+                <input id="hidden" type="hidden" name="_method" value="PATCH">
+            <h1>Edit</h1>
+            <input type="text" name="content" placeholder="New Post....">
+            <label for="theme">Please Choose a top that your post covers:</label>
+            <select id="theme" name="theme"> 
+                <option value="food">Food/Healthy Eating</option>
+                <option value="fitness">Fitness</option>
+                <option value="other">Social/Other</option>
+            </select>
+            <input type="submit" id="submit" value="Update">
+            <button type="submit" class="btn cancel" onclick="closeForm()">Cancel</button>
+</form>

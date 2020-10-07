@@ -3,6 +3,7 @@ h1 {
   font-family: "Sansita Swashed", cursive;
   font-size: 5vw;
   text-align: center;
+  /* margin-top: 50px; */
 }
 
 div.posts {

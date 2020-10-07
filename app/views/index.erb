@@ -1,4 +1,4 @@
-<h1>Welcome to FitJournal, <%= @user.first_name %>!</h1>
+<h1>Welcome to FitJournal, <%= @user.first_name %>!</h1><br>
 
 <h3>Newsfeed:</h3>
 <div id="new_post">
@@ -32,7 +32,7 @@
             <%= post.content %>
         </div>
     <% if post.user_id == @user.id %>
-        <button class="open-button" onclick="openForm()" >Edit</button>
+        <button class="open-button" onclick="document.location='/posts/<%= post.id%>/edit'" >Edit</button>
         <form method="post" action="/posts/<%= post.id %>">
             <input id="hidden" type="hidden" name="_method" value="DELETE">
             <input type="submit" id="delete" value="Delete">

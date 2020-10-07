@@ -6,6 +6,14 @@ class PostsController < ApplicationController
         erb :index
      end
 
+     patch '/posts/:id' do
+        @post = Post.find_by_id(params[:id])
+        @post.theme = params[:theme]
+        @post.content = params[:content]
+        @post.save
+        redirect "/posts"
+    end
+
     
     post '/posts' do
         post = Post.new(user_id: current_user.id, theme: params[:theme], content: params[:content])
@@ -15,19 +23,20 @@ class PostsController < ApplicationController
             # flash error (we learned these 10/06)
             redirect "/posts"
         end
-    end
+    end 
 
-    patch 'posts/:id' do
+    get '/posts/:id/edit' do
+        @users = User.all
         @post = Post.find_by_id(params[:id])
-        @post.theme = params[:theme]
-        @post.content = params[:content]
-        @post.save
-        redirect "/posts"
+        erb :"posts/edit"
     end
 
-    delete 'posts/:id' do
+
+    delete '/posts/:id' do
         @post = Post.find_by_id(params[:id])
         @post.destroy
         redirect "/posts"
     end
+
+   
 end

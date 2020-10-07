@@ -1,0 +1,35 @@
+<h1><%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></h1><br>
+
+<h3>Long Term Goal:</h3>
+<p><%= @user.long_term_goal%></p>
+
+<% @posts.each do |post| %>
+    <% if post.user_id == @user.id %>
+        <% if post.theme == "food"%>
+            <div class="posts orange">
+        <% elsif post.theme == "fitness" %>
+            <div class="posts yellow">
+        <% else %>
+            <div class="posts blue">
+        <% end %>
+                <div class="posts_username">
+                    <%= post.user.username %> 
+                </div>
+                 <div class="posts_date">
+                     <%= post.updated_at.strftime('%b %d, %Y') || post.created_at.strftime('%b %d, %Y') %>
+                </div><br> 
+                <div class="posts_content"> 
+                    <%= post.content %>
+                </div>
+                <% if post.user_id == @current_user.id %>
+                <button class="open-button" onclick="document.location='/posts/<%= post.id%>/edit'" >Edit</button>
+                <form method="post" action="/posts/<%= post.id %>">
+                    <input id="hidden" type="hidden" name="_method" value="DELETE">
+                    <input type="submit" id="delete" value="Delete">
+                </form>
+                 <% end %>
+            </div>
+        <% end %>
+<% end %>
+
+    

@@ -1,0 +1,18 @@
+<h1>Edit your profile:</h1><br><br><br>
+
+<div id="edit_profile_form">
+<form method="POST"  action="/users/<%= @user.id%>">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+
+<label for="first_name">First Name: </label>
+    <input type="text" name="first_name" id="first_name" value="<%= @user.first_name%>"><br>
+<label for="last_name">Last Name: </label>      
+    <input type="text" name="last_name" id="last_name" value="<%= @user.last_name%>"><br>
+<label for="username">Username: </label>
+    <input type="text" name="username" id="username" value="<%= @user.username%>"><br>
+<%# In the future this is where I could have a safer way for users to change their email/reset their password %>
+<label for="long_term_goal">Long Term Goal: </label><br>
+    <textarea name="long_term_goal" id="long_term_goal" rows="10" cols="70"><%= @user.long_term_goal ||"Long term goal..."%></textarea><br>
+    <input type="submit" value="Update Profile">
+</form>
+</div>

@@ -1,10 +1,10 @@
 <h1><%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></h1><br>
+     <button class="open-button" onclick="document.location='/users/<%= @user.id%>/edit'" >Edit Profile</button>
 
 <h3>Long Term Goal:</h3>
 <p><%= @user.long_term_goal%></p>
 
 <% @posts.each do |post| %>
-    <% if post.user_id == @user.id %>
         <% if post.theme == "food"%>
             <div class="posts orange">
         <% elsif post.theme == "fitness" %>
@@ -30,6 +30,4 @@
                  <% end %>
             </div>
         <% end %>
-<% end %>
-
     

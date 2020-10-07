@@ -4,7 +4,13 @@
 
 <% @posts.each do |post| %>
 <%# remember to remove orange class and assign it as a variable %>
-  <div class="posts orange">
+    <% if post.theme == "food"%>
+        <div class="posts orange">
+    <% elsif post.theme == "fitness" %>
+        <div class="posts yellow">
+    <% else %>
+        <div class="posts blue">
+    <% end %>
         <div class="posts_username">
             <%= post.user.username %> 
         </div>

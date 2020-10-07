@@ -1,5 +1,8 @@
 h1 {
   color: navy;
+  font-family: "Sansita Swashed", cursive;
+  font-size: 5vw;
+  text-align: center;
 }
 
 div.posts {
@@ -16,7 +19,7 @@ div.blue {
 }
 
 div.yellow {
-  border-color: yellow;
+  border-color: #f8fc01;
 }
 
 div.orange {

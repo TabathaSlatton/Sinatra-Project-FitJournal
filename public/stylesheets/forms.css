@@ -1,0 +1,41 @@
+input {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[type="text"]:focus {
+  border: 3px solid #555;
+}
+input[type="password"]:focus {
+  border: 3px solid #555;
+}
+
+input[type="submit"] {
+  width: 20%;
+}
+
+input#email {
+  background-image: url("/images/email_icon.png");
+  background-position: 6px 6px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+  background-size: 6%;
+}
+
+input#password {
+  background-image: url("/images/password.png");
+  background-position: 6px 6px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+  background-size: 6%;
+}
+
+/* div#login_form {
+  /* width: 100%; */
+/* display: flex; */
+/* justify-content: center; */

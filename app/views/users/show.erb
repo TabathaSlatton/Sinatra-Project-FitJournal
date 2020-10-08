@@ -1,9 +1,25 @@
 <h1><%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></h1><br>
-     <button class="open-button" onclick="document.location='/users/<%= @user.id%>/edit'" >Edit Profile</button>
 
 <h3>Long Term Goal:</h3>
 <p><%= @user.long_term_goal%></p>
 
+<% if @user.id == @current_user.id %>
+<h3>New Post:</h3>
+<div id="new_post">
+<form method="post" action="/posts">
+<input type="text" name="content" placeholder="New Post....">
+<label for="theme">Please Choose a top that your post covers:</label>
+<select id="theme" name="theme"> 
+    <option value="food">Food/Healthy Eating</option>
+    <option value="fitness">Fitness</option>
+    <option value="other">Social/Other</option>
+  </select>
+<input type="submit" id="submit">
+</form>
+</div>
+<% end %>
+
+<h3><%= @user.first_name.capitalize %>'s posts: </h3>
 <% @posts.each do |post| %>
         <% if post.theme == "food"%>
             <div class="posts orange">
@@ -22,7 +38,7 @@
                     <%= post.content %>
                 </div>
                 <% if post.user_id == @current_user.id %>
-                <button class="open-button" onclick="document.location='/posts/<%= post.id%>/edit'" >Edit</button>
+                <a class="button" href='/posts/<%= post.id%>/edit' >Edit</a>
                 <form method="post" action="/posts/<%= post.id %>">
                     <input id="hidden" type="hidden" name="_method" value="DELETE">
                     <input type="submit" id="delete" value="Delete">

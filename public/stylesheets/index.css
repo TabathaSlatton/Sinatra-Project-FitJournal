@@ -26,3 +26,11 @@ div.yellow {
 div.orange {
   border-color: orange;
 }
+
+a.profile_link {
+  text-decoration: none;
+  color: orange;
+  font-weight: bold;
+  /* font-family: "Sansita Swashed", cursive; */
+  font-size: 16px;
+}

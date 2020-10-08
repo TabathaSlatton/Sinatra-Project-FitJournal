@@ -50,13 +50,15 @@ label {
   margin-left: 240px;
   font-size: 10pt;
 }
-/* div#login_form {
-  /* width: 100%; */
-/* display: flex; */
-/* justify-content: center; */
+
+textarea {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* ----------------Edit Form------------------- */
-.open-button,
+a.button,
 #delete {
   display: block;
   width: 5%;
@@ -70,8 +72,4 @@ label {
   /* position: relative;
   top: 0;
   right: 0; */
-}
-
-.form-popup {
-  display: none;
 }

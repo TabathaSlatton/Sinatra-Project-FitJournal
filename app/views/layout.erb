@@ -21,13 +21,22 @@
           <li><a href="/">Home</a></li>
           <li><a href="/">Journal</a></li>
           <li><a href="/">Goals</a></li>
-          <li><a href="/users/:id">Profile</a></li>
+          <li><a href="/users/<%= current_user.id %>">Profile</a></li>
+          <li><a href="/users/<%= current_user.id %>/edit">Edit Profile</a></li>
       </ul>
     <div class="wrapper">
 
         <%= yield %>
 
       <footer class="branding">
+      <% if logged_in? %>
+          <h4>Welcome <%= current_user.first_name %></h4>	         
+          <h4><a href="/logout">Log Out</a></h4>	          
+      <% else %>	       
+          <h4><a href="/login">Log In</a></h4>
+          <h4><a href="/signup">Signup</a></h4>	          
+      <% end %>	        
+
         <small>&copy; 2020 <strong>FitJournal</strong></small>
       </footer>
     </div>

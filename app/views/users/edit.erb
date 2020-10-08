@@ -1,3 +1,5 @@
+ <%= erb :"partials/navbar" %>
+
 <h1>Edit your profile:</h1><br><br><br>
 
 <div id="edit_profile_form">
@@ -15,4 +17,8 @@
     <textarea name="long_term_goal" id="long_term_goal" rows="10" cols="70"><%= @user.long_term_goal ||"Long term goal..."%></textarea><br>
     <input type="submit" value="Update Profile">
 </form>
+<form method="post" action="/users/<%= @user.id %>">
+            <input id="hidden" type="hidden" name="_method" value="DELETE">
+            <input type="submit" id="delete" value="Delete">
+        </form>
 </div>

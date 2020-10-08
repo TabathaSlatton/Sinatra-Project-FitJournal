@@ -10,6 +10,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do 
+    redirect_if_not_logged_in
     @posts = Post.all
     @user = User.find(session[:user_id])
     erb :index  
@@ -52,6 +53,12 @@ class ApplicationController < Sinatra::Base
 
     def current_user
       @user ||= User.find_by(id: session[:user_id])
+    end
+
+    def redirect_if_not_logged_in
+      if !logged_in?
+        redirect "/login"
+      end
     end
   end
 end

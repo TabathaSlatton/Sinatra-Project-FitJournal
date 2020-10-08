@@ -1,3 +1,5 @@
+ <%= erb :"partials/navbar" %>
+
 <h1>Edit</h1><br><br>
  <form method="post" action="/posts/<%= @post.id %>">
     <input id="hidden" type="hidden" name="_method" value="patch">

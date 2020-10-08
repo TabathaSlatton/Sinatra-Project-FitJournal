@@ -1,6 +1,7 @@
 class PostsController < ApplicationController 
 
     get '/posts' do 
+        redirect_if_not_logged_in
         @user = current_user
         @posts = Post.all
         erb :index
@@ -26,6 +27,7 @@ class PostsController < ApplicationController
     end 
 
     get '/posts/:id/edit' do
+        redirect_if_not_logged_in
         @users = User.all
         @post = Post.find_by_id(params[:id])
         erb :"posts/edit"

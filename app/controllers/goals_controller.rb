@@ -15,15 +15,16 @@ class GoalsController < ApplicationController
     # end
 
     
-    # post '/posts' do
-    #     post = Post.new(user_id: current_user.id, theme: params[:theme], content: params[:content])
-    #     if post.save
-    #         redirect "/posts"
-    #     else
-    #         # flash error (we learned these 10/06)
-    #         redirect "/posts"
-    #     end
-    # end 
+    post '/goals' do
+        goal = Goal.new(user_id: current_user.id, name: params[:name], description: params[:description], how_long: params[:how_long], reward: params[:reward])
+        if goal.save
+            redirect "/goals"
+        else
+            # flash error (we learned these 10/06)
+            redirect "/goals"
+        end
+    end 
+   
 
     # get '/posts/:id/edit' do
     #     redirect_if_not_logged_in

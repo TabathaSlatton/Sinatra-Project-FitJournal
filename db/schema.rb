@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2020_10_08_192638) do
   create_table "goals", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "length"
+    t.string "how_long"
     t.string "reward"
     t.boolean "complete", default: false
     t.datetime "created_at", null: false

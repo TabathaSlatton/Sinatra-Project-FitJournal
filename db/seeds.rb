@@ -4,20 +4,32 @@ end
 
 5.times do
     Post.create(theme: ["food", "fitness", "social/other"].sample, content: Faker::Movies::PrincessBride.quote, user_id: 1)
+    Goal.create(description: Faker::TvShows::StrangerThings.quote, length: ["1 month", "A year", "2 weeks", "3 days"].sample, reward: Faker::Dessert.variety, user_id: 1)
 end
 
 5.times do
     Post.create(theme: ["food", "fitness", "social/other"].sample, content: Faker::Movies::PrincessBride.quote, user_id: 2)
+    Goal.create(description: Faker::TvShows::StrangerThings.quote, length: ["1 month", "A year", "2 weeks", "3 days"].sample, reward: Faker::Dessert.variety, user_id: 2)
 end
 
 5.times do
     Post.create(theme: ["food", "fitness", "social/other"].sample, content: Faker::Movies::PrincessBride.quote, user_id: 3)
+    Goal.create(description: Faker::TvShows::StrangerThings.quote, length: ["1 month", "A year", "2 weeks", "3 days"].sample, reward: Faker::Dessert.variety, user_id: 3)
 end
 
 5.times do
     Post.create(theme: ["food", "fitness", "social/other"].sample, content: Faker::Movies::PrincessBride.quote, user_id: 4)
+    Goal.create(description: Faker::TvShows::StrangerThings.quote, length: ["1 month", "A year", "2 weeks", "3 days"].sample, reward: Faker::Dessert.variety, user_id: 4)
 end
 
 5.times do
     Post.create(theme: ["food", "fitness", "social/other"].sample, content: Faker::Movies::PrincessBride.quote, user_id: 5)
+    Goal.create(description: Faker::TvShows::StrangerThings.quote, length: ["1 month", "A year", "2 weeks", "3 days"].sample, reward: Faker::Dessert.variety, user_id: 5)
 end
+
+
+Journal.create()
+# delete dev and schema
+#re migrate 
+#re seed
+    

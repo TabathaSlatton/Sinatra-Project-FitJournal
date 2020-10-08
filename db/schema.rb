@@ -10,7 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_06_133615) do
+ActiveRecord::Schema.define(version: 2020_10_08_192638) do
+
+  create_table "goals", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "length"
+    t.string "reward"
+    t.boolean "complete", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+  end
+
+  create_table "journals", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "water_intake"
+    t.string "notes"
+    t.string "mood"
+    t.integer "calories_in"
+    t.integer "calories_out"
+    t.integer "calorie_goal"
+    t.boolean "complete", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "theme"

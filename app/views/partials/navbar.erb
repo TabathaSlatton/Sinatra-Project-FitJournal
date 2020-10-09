@@ -1,6 +1,26 @@
-<ul id="navbar">
-    <li class="navbar"><a href="/" class="navbar">Home</a></li>
-    <li class="navbar"><a href="/goals" class="navbar">Goals</a></li>
-    <li class="navbar"><a href="/users/<%= current_user.id %>" class="navbar">Profile</a></li>
-    <li class="navbar"><a href="/users/<%= current_user.id %>/edit" class="navbar">Edit Profile</a></li>
-</ul> 
+<%# <ul id="navbar"> %>
+    <%# <li class="navbar"><a href="/" class="navbar">Home</a></li> %>
+    <%# <li class="navbar"><a href="/goals" class="navbar">Goals</a></li> %>
+    <%# <li class="navbar"><a href="/users/<%= current_user.id %>
+    <%# " class="navbar">Profile</a></li> %> 
+    <%# <li class="navbar"><a href="/users/<%= current_user.id %>
+    <%# /edit" class="navbar">Edit Profile</a></li> %> 
+<%# </ul>  %>
+ <div class="navbar-fixed">
+ <nav>
+    <div class="nav-wrapper cyan darken-4" >
+      <a href="#" class="brand-logo">FitJournal</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/">Home</a></li>
+        <li><a href="/goals">Goals</a></li>
+        <li><a href="/users/<%= current_user.id %>">Profile</a></li>
+        <li><a href="/users/<%= current_user.id %>/edit">Edit Profile</a></li>
+        <% if logged_in? %>
+        <li><a href="/logout" class="waves-effect waves-light btn teal">Logout</a></li>
+        <% else%>
+        <li><a href="/login" class="waves-effect waves-light btn teal">Login</a></li>
+        <% end %>
+      </ul>
+    </div>
+</nav>
+</div>

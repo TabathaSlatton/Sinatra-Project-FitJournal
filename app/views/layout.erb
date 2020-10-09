@@ -10,11 +10,11 @@
     <title>FitJournal</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-       <%# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> %>
-   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="/stylesheets/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
+   <%# <link rel="stylesheet" href="/stylesheets/main.css" /> 
     <link rel="stylesheet" href="/stylesheets/index.css" />
-    <link rel="stylesheet" href="/stylesheets/forms.css" />
+    <link rel="stylesheet" href="/stylesheets/forms.css" /> %>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sansita+Swashed:wght@500&display=swap" rel="stylesheet">
   </head>
   <body>
@@ -25,11 +25,7 @@
 
       <footer class="branding">
       <% if logged_in? %>
-          <h4>Welcome <%= current_user.first_name %></h4>	         
-          <h4><a href="/logout">Log Out</a></h4>	          
-      <% else %>	       
-          <h4><a href="/login">Log In</a></h4>
-          <h4><a href="/signup">Signup</a></h4>	          
+          <h4>Welcome, <%= current_user.first_name %></h4>	                 
       <% end %>	        
 
         <small>&copy; 2020 <strong>FitJournal</strong></small>

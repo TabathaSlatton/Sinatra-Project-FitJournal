@@ -1,7 +1,7 @@
  <%= erb :"partials/navbar" %>
 <h1>Welcome to FitJournal, <%= @user.first_name %>!</h1>
 
-<h3>News Post:</h3>
+<h3>New Post:</h3>
 
 <div id="new_post" >
 <form method="post" action="/posts">
@@ -17,31 +17,25 @@
 </div>
 
 <h3>Newsfeed:</h3>
+<div class ="row">
+    <div class="col s12 m12">
 <% @posts.each do |post| %>
-    <% if post.theme == "food"%>
-        <div class="posts orange">
-    <% elsif post.theme == "fitness" %>
-        <div class="posts yellow">
-    <% else %>
-        <div class="posts blue">
-    <% end %>
-        <div class="posts_username">
-            <a href="/users/<%= post.user_id%>" class="profile_link"><%= post.user.username %> </a>
-        </div>
-        <div class="posts_date">
-             <%= post.updated_at.strftime('%b %d, %Y') || post.created_at.strftime('%b %d, %Y') %>
-        </div><br> 
-        <div class="posts_content"> 
-            <%= post.content %>
+    <div class="card grey lighten-3">
+        <div class="card-content black-text">
+    <%# <% if post.theme == "food"%>
+    <%# <% elsif post.theme == "fitness" %> 
+    <%# <% else %>
+    <%# <% end %>
+    <span class="card-title"><a href="/users/<%= post.user_id%>" class="profile_link"><%= post.user.username %> </a></span>            
+       <p> <%= post.updated_at.strftime('%b %d, %Y') || post.created_at.strftime('%b %d, %Y') %>
+        <%= post.content %> </p>
         </div>
     <% if post.user_id == @user.id %>
-    <%# erb :whatever %>
-        <a class="button" href='/posts/<%= post.id%>/edit' >Edit</a>
-        <form method="post" action="/posts/<%= post.id %>">
-            <input id="hidden" type="hidden" name="_method" value="DELETE">
-            <input type="submit" id="delete" value="Delete">
-        </form>
+    <div class="card-action">
+        <a href='/posts/<%= post.id%>/edit' >Edit/Delete</a>
+    </div>
     <% end %>
     </div>
-
 <% end %>
+</div>
+</div>

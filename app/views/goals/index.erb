@@ -30,10 +30,6 @@
               <li class="goals_list"><%=goal.name %>: <%= goal.description %>. Expected to complete in/by: <%= goal.how_long %>. Reward: <%= goal.reward %></li>
       <%# </form> %>
       <a class="button" href='/goals/<%= goal.id%>/edit' >Edit</a>
-        <form method="post" action="/goals/<%= goal.id %>">
-            <input id="hidden" type="hidden" name="_method" value="DELETE">
-            <input type="submit" id="delete" value="Delete">
-        </form>
     <% end %>
     <% end %>
 </ul>

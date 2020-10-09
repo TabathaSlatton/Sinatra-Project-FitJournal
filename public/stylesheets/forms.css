@@ -28,6 +28,10 @@ input[type="submit"] {
   width: 20%;
 }
 
+input[type="submit"]:hover {
+  background-color: navy;
+}
+
 input#email {
   background-image: url("/images/email_icon.png");
   background-position: 6px 6px;
@@ -58,19 +62,19 @@ textarea {
 }
 
 /* ----------------Edit Form------------------- */
-a.button,
-#delete {
-  display: block;
-  /* width: 5%; */
+a.button {
   background-color: orange;
   border: none;
   color: white;
-  /* padding: 1% 1%; */
   text-decoration: none;
   font-family: "Roboto", sans-serif;
   font-size: 10pt;
   text-align: center;
-  /* position: relative;
-  top: 0;
-  right: 0; */
+  position: relative;
+  padding: 3px 3px;
+  border-radius: 10%;
+}
+
+a.button:hover {
+  background-color: navy;
 }

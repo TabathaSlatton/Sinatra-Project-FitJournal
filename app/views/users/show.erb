@@ -41,10 +41,6 @@
                 </div>
                 <% if post.user_id == @current_user.id %>
                 <a class="button" href='/posts/<%= post.id%>/edit' >Edit</a>
-                <form method="post" action="/posts/<%= post.id %>">
-                    <input id="hidden" type="hidden" name="_method" value="DELETE">
-                    <input type="submit" id="delete" value="Delete">
-                </form>
                  <% end %>
             </div>
         <% end %>

@@ -61,14 +61,15 @@ textarea {
 a.button,
 #delete {
   display: block;
-  width: 5%;
+  /* width: 5%; */
   background-color: orange;
   border: none;
   color: white;
-  padding: 3px 6px;
+  /* padding: 1% 1%; */
   text-decoration: none;
   font-family: "Roboto", sans-serif;
   font-size: 10pt;
+  text-align: center;
   /* position: relative;
   top: 0;
   right: 0; */

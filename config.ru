@@ -7,7 +7,6 @@ end
 use Rack::MethodOverride 
 
 use GoalsController
-use JournalsController
 use PostsController
 use UsersController
 run ApplicationController

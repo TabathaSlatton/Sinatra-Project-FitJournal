@@ -2,17 +2,26 @@ class GoalsController < ApplicationController
     get '/goals' do 
         redirect_if_not_logged_in
         @user = current_user
-        @goals = Goal.all.map {|goal| goal.user_id == @user.id}
+        @goals = Goal.all
         erb :"/goals/index"
      end
 
-    #  patch '/posts/:id' do
-    #     @post = Post.find_by_id(params[:id])
-    #     @post.theme = params[:theme]
-    #     @post.content = params[:content]
-    #     @post.save
-    #     redirect "/posts"
-    # end
+    patch '/goals/:id/complete' do
+        @goal = Goal.find_by_id(params[:id])
+        @goal.complete = params[:complete]
+        @goal.save
+        redirect "/goals"
+    end
+
+    patch '/goals/:id' do
+        @goal = Goal.find_by_id(params[:id])
+        @goal.name = params[:name]
+        @goal.description = params[:description]
+        @goal.how_long = params[:how_long]
+        @goal.reward = params[:reward]
+        @goal.save
+        redirect "/goals"
+    end
 
     
     post '/goals' do
@@ -26,18 +35,18 @@ class GoalsController < ApplicationController
     end 
    
 
-    # get '/posts/:id/edit' do
-    #     redirect_if_not_logged_in
-    #     @users = User.all
-    #     @post = Post.find_by_id(params[:id])
-    #     erb :"posts/edit"
-    # end
+    get '/goals/:id/edit' do
+        redirect_if_not_logged_in
+        @users = User.all
+        @goal = Goal.find_by_id(params[:id])
+        erb :"goals/edit"
+    end
 
 
-    # delete '/posts/:id' do
-    #     @post = Post.find_by_id(params[:id])
-    #     @post.destroy
-    #     redirect "/posts"
-    # end
+    delete '/goals/:id' do
+        @goal = Goal.find_by_id(params[:id])
+        @goal.destroy
+        redirect "/goals"
+    end
 
 end

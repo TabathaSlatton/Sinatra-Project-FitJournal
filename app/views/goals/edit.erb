@@ -1,0 +1,20 @@
+ <%= erb :"partials/navbar" %>
+
+<h1>Edit Goal</h1><br><br>
+ <form method="post" action="/goals/<%= @goal.id %>">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+        <label for="name">Goal Title: </label>
+            <input type="text" id="name" name="name" value="<%= @goal.name%>">
+        <label for="description">Goal Description: </label>
+            <input type="text" id="description" name="description" value="<%= @goal.description%>">
+        <label for="how_long">Timeframe: </label>
+            <input type="text" id="how_long" name="how_long" value="<%= @goal.how_long%>">
+        <label for="reward">Reward: </label>
+            <input type="text" id="reward" name="reward" value="<%= @goal.reward%>">  
+        <input type="submit" id="submit" value="Update">
+</form>
+<form method="post" action="/goals/<%= @goal.id %>">
+    <input id="hidden" type="hidden" name="_method" value="DELETE">
+    <input type="submit" id="delete" value="Delete">
+</form>
+

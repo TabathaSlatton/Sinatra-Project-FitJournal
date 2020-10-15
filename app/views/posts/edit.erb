@@ -1,6 +1,7 @@
  <%= erb :"partials/navbar" %>
 
 <h1>Edit</h1><br><br>
+
  <form method="post" action="/posts/<%= @post.id %>">
     <input id="hidden" type="hidden" name="_method" value="patch">
     <textarea name="content" rows="10" cols="70"><%= @post.content%></textarea><br>
@@ -12,6 +13,9 @@
         </select>
     <input type="submit" id="submit" value="Update">
 </form>
+
+
+
 <form method="post" action="/posts/<%= @post.id %>">
             <input id="hidden" type="hidden" name="_method" value="DELETE">
             <input type="submit" id="delete" value="Delete">

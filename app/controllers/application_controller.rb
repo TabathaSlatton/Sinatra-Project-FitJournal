@@ -11,7 +11,7 @@ class ApplicationController < Sinatra::Base
 
   get "/" do 
     redirect_if_not_logged_in
-    @posts = Post.all
+    @posts = Post.all.sort_by{|post| post.updated_at ||post.created_at}.reverse
     @user = User.find(session[:user_id])
     erb :index  
   end
@@ -35,9 +35,13 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/signup" do 
-    @user = User.create(first_name: params[:first_name], last_name: params[:last_name], email_address: params[:email_address], username: params[:username], password: params[:password])
+    @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email_address: params[:email_address], username: params[:username], password: params[:password])
+    if @user.save
     session[:user_id] = @user.id
     redirect "/"
+    else
+      redirect "/signup"
+    end
   end
 
   get "/logout" do
@@ -52,7 +56,7 @@ class ApplicationController < Sinatra::Base
     end
 
     def current_user
-      @user ||= User.find_by(id: session[:user_id])
+      User.find_by(id: session[:user_id])
     end
 
     def redirect_if_not_logged_in
